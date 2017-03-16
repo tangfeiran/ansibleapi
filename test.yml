@@ -1,0 +1,16 @@
+---
+- hosts: all
+  gather_facts: "no"
+  serial: 1
+
+
+  tasks:
+  - name: tasks
+    shell: "ls"
+
+  post_tasks:
+  - name: post_tasks
+    shell: echo 2
+  pre_tasks:
+  - name: pre_tasks
+    shell: echo 1

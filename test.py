@@ -1,4 +1,4 @@
-from lib.ansibleapi.playbook import PlayBookJob
+from ansibleapi.playbook import PlayBookJob
 
 if __name__ == '__main__':
     PlayBookJob(playbooks=['/tmp/test.yml'],

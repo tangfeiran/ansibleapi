@@ -100,7 +100,7 @@ class PlayBookJob(object):
     self.callback = ExtendCallback()
 
     # 直接开始
-    self.run()
+    # self.run()
 
   def run(self):
     pb = None
@@ -117,7 +117,7 @@ class PlayBookJob(object):
 
 # daemo
 if __name__ == "__main__":
-    PlayBookJob(playbooks=['/tmp/test.yml'],
+    pl = PlayBookJob(playbooks=['/tmp/test.yml'],
                 host_list=['172.16.10.54', '172.16.10.53'],
                 remote_user='root',
                 group_name="test",
@@ -125,3 +125,4 @@ if __name__ == "__main__":
                 ext_vars=None,
                 passwords='123456'
                 )
+    pl.run()

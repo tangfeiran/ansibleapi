@@ -15,6 +15,7 @@ from ansible.plugins import vars_loader
 from ansible.utils.vars import combine_vars
 from ansible.utils.path import unfrackpath
 from ansible.inventory import Inventory
+import os
 
 try:
     from __main__ import display
@@ -92,7 +93,7 @@ class ExtendInventory(Inventory):
                 if self.ext_vars and isinstance(self.ext_vars,dict):
                     for k,v in self.ext_vars.items():
                         zdy_group_name.set_variable(k,v)
-                        local_group.set_variable(k,v)
+                        # local_group.set_variable(k,v)
 
         elif self._loader.path_exists(host_list):
             # TODO: switch this to a plugin loader and a 'condition' per plugin on which it should be tried, restoring 'inventory pllugins'
